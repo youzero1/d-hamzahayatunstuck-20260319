@@ -1,29 +1,35 @@
 {
-  "name": "next-todo-app",
-  "version": "0.1.0",
+  "name": "todo-app",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typeorm": "ts-node ./node_modules/typeorm/cli",
+    "migration:run": "npm run typeorm migration:run -- -d ./src/lib/data-source.ts",
+    "migration:generate": "npm run typeorm migration:generate -- -d ./src/lib/data-source.ts",
+    "migration:create": "npm run typeorm migration:create"
   },
   "dependencies": {
-    "next": "14.1.0",
+    "next": "14.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sqlite3": "5.1.6",
+    "sqlite3": "5.1.7",
     "typeorm": "0.3.20",
-    "reflect-metadata": "0.1.13",
-    "tailwindcss": "3.3.0",
-    "autoprefixer": "10.4.14",
-    "postcss": "8.4.31"
+    "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
-    "@types/node": "20.11.5",
-    "@types/react": "18.2.48",
-    "@types/react-dom": "18.2.18",
-    "@types/sqlite3": "3.1.8",
+    "@types/node": "20.11.24",
+    "@types/react": "18.2.61",
+    "@types/react-dom": "18.2.19",
+    "autoprefixer": "10.4.16",
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.2.5",
+    "postcss": "8.4.33",
+    "tailwindcss": "3.4.1",
+    "ts-node": "10.9.2",
     "typescript": "5.3.3"
   }
 }
